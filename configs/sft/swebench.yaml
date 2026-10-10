@@ -1,0 +1,12 @@
+method: sft
+model: Qwen/Qwen3-8B
+data: data/trajectories/swebench_sft.jsonl
+env:
+  name: swebench
+  kwargs: {split: lite}
+train:
+  lr: 1.0e-5
+  epochs: 2
+  batch_size: 32
+  max_seq_len: 32768
+output_dir: runs/sft_swebench

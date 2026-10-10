@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "inputs": [
+    {
+      "id": "config",
+      "type": "promptString",
+      "description": "Config path",
+      "default": "configs/sft/swebench.yaml"
+    }
+  ],
+  "configurations": [
+    {
+      "name": "Train (config)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/train.py",
+      "args": ["--config", "${input:config}"],
+      "env": {"PYTHONPATH": "${workspaceFolder}/src"},
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "Eval (config)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/eval.py",
+      "args": ["--config", "${input:config}"],
+      "env": {"PYTHONPATH": "${workspaceFolder}/src"},
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "Pytest (current file)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["${file}", "-x", "-q"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

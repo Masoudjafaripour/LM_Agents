@@ -1,0 +1,13 @@
+method: rlft
+model: runs/sft_swebench      # start from SFT checkpoint
+algo: grpo
+env:
+  name: swebench
+  kwargs: {split: lite}
+reward: task_success
+train:
+  lr: 1.0e-6
+  steps: 300
+  group_size: 8
+  kl_coef: 0.0
+output_dir: runs/rlft_swebench

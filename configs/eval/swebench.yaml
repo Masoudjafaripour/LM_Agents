@@ -1,0 +1,5 @@
+model: runs/rlft_swebench
+env:
+  name: swebench
+  kwargs: {split: verified}
+task_ids: []                  # empty = all tasks in split

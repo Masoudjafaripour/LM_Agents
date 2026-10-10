@@ -218,3 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Experiments
+runs/
+data/
+wandb/
+*.safetensors
+lm_ag_venv/

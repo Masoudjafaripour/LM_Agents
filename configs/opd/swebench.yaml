@@ -1,0 +1,11 @@
+method: opd
+model: Qwen/Qwen3-8B          # student
+teacher: Qwen/Qwen3-32B
+env:
+  name: swebench
+  kwargs: {split: lite}
+train:
+  lr: 1.0e-6
+  steps: 500
+  rollouts_per_step: 64
+output_dir: runs/opd_swebench
