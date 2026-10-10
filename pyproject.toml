@@ -12,7 +12,7 @@ dependencies = ["pyyaml"]
 
 [project.optional-dependencies]
 train = ["torch", "transformers", "trl", "peft", "datasets", "vllm"]
-dev = ["pytest", "ruff"]
+dev = ["pytest", "ruff", "matplotlib"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -11,7 +11,9 @@ class CountdownEnv(Env):
 
     def step(self, action):
         self.left -= 1
-        return StepResult(observation=str(self.left), reward=float(self.left == 0), done=self.left == 0)
+        return StepResult(
+            observation=str(self.left), reward=float(self.left == 0), done=self.left == 0
+        )
 
 
 class EchoPolicy:

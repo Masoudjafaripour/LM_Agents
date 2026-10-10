@@ -18,6 +18,6 @@ def make_env(name: str, **kwargs) -> Env:
 
 
 # Import env subpackages so their @register_env decorators run.
-from lm_agents.envs import swebench  # noqa: E402,F401
+from lm_agents.envs import humaneval, swebench  # noqa: F401
 
-__all__ =["Env", "StepResult", "ENV_REGISTRY", "register_env", "make_env"]
+__all__ = ["ENV_REGISTRY", "Env", "StepResult", "make_env", "register_env"]

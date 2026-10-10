@@ -24,5 +24,9 @@ class Env(ABC):
     def step(self, action: str) -> StepResult:
         """Apply the agent's action (text / tool call) and return the result."""
 
+    def task_ids(self) -> list[str]:
+        """All task ids in the configured split."""
+        raise NotImplementedError
+
     def close(self) -> None:
         pass
